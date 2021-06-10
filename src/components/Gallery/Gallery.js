@@ -20,7 +20,7 @@ const Gallery = ({ showGallery, onImgClick }) => {
 
 Gallery.propTypes = {
     onImgClick: PropTypes.func,
-  showGallery: PropTypes.array,
+    showGallery: PropTypes.array,
 };
 
 export default Gallery;

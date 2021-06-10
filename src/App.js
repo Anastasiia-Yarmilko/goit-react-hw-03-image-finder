@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Container from './components/Container';
+import Container from './components/Container/Container';
 import Gallery from './components/Gallery/Gallery';
 import Button from './components/Button/Button';
 import Modal from './components/Modal/Modal';
-import Searchbar from './components/Searchbar/Searchbar';
+import Search from './components/Searchbar/Searchbar';
 import Loader from './components/Loader/Loader';
-import pixabayApi from './services/pixabay.api';
 import PropTypes from 'prop-types';
+import pixabayApi from './services/pixabay.api';
 
 class App extends Component {
   state = {
@@ -71,7 +71,7 @@ class App extends Component {
     return (
       <Container>
         {error && <h1>Try again!</h1>}
-        <Searchbar onSubmit={this.onChangeQuery} />
+        <Search onSubmit={this.onChangeQuery} />
         <Gallery showGallery={gallery} onImgClick={this.imgClick} />
 
         {isLoading && <Loader />}
