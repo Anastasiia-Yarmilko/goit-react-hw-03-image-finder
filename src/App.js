@@ -3,7 +3,7 @@ import Container from './components/Container/Container';
 import Gallery from './components/Gallery/Gallery';
 import Button from './components/Button/Button';
 import Modal from './components/Modal/Modal';
-import Search from './components/Searchbar/Searchbar';
+import Search from './components/Search/Search';
 import Loader from './components/Loader/Loader';
 import PropTypes from 'prop-types';
 import pixabayApi from './services/pixabay.api';

@@ -15,4 +15,5 @@ const fetchPixabayImgs = async ({ q, page }) => {
   return await axios.get('', { params: { q, page } });
 };
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default { fetchPixabayImgs };
