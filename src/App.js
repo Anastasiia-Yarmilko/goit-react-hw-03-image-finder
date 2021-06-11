@@ -14,23 +14,23 @@ class App extends Component {
     page: 1,
     largeImage: '',
     showModal: false,
-    q: '',
+    que: '',
     isLoading: false,
     error: null,
   };
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.q !== this.state.q) {
+    if (prevState.que !== this.state.que) {
       this.fetchGallery();
     }
   }
 
   onChangeQuery = query => {
-    this.setState({ q: query, page: 1, gallery: [], error: null });
+    this.setState({ que: query, page: 1, gallery: [], error: null });
   };
   fetchGallery = () => {
-    const { q, page } = this.state;
-    const options = { q, page };
+    const { que, page } = this.state;
+    const options = { que, page };
 
     this.setState({ isLoading: true });
     pixabayApi
@@ -67,7 +67,7 @@ class App extends Component {
 
   render() {
     const { showModal, gallery, isLoading, error, largeImage } = this.state;
-    const shouldShowLoadMoreBtn = gallery.length > 0 && !isLoading;
+    const showLoadMoreBtn = gallery.length > 0 && !isLoading;
     return (
       <Container>
         {error && <h1>Try again!</h1>}
@@ -75,7 +75,7 @@ class App extends Component {
         <Gallery showGallery={gallery} onImgClick={this.imgClick} />
 
         {isLoading && <Loader />}
-        {shouldShowLoadMoreBtn && <Button onClick={this.fetchGallery} />}
+        {showLoadMoreBtn && <Button onClick={this.fetchGallery} />}
 
         {showModal && (
           <Modal onClose={this.imgClick}>
@@ -90,7 +90,7 @@ class App extends Component {
 App.propTypes = {
   gallery: PropTypes.array,
   page: PropTypes.number,
-  q: PropTypes.string,
+  que: PropTypes.string,
   largeImage: PropTypes.string,
   showModal: PropTypes.bool,
   isLoading: PropTypes.bool,
