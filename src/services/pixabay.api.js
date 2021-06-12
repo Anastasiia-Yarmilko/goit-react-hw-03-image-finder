@@ -7,12 +7,12 @@ axios.defaults.baseURL = BASE_URL;
 axios.defaults.params = {
   key: API_KEY,
   image_type: 'photo',
-//   orientation: 'horizontal',
+  orientation: 'horizontal',
   per_page: 12,
 };
 
-const fetchPixabayImgs = async ({ q, page }) => {
-  return await axios.get('', { params: { q, page } });
+const fetchPixabayImgs = async ({ que, page }) => {
+  return await axios.get('', { params: { que, page } });
 };
 
 // eslint-disable-next-line import/no-anonymous-default-export
