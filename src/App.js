@@ -14,23 +14,23 @@ class App extends Component {
     page: 1,
     largeImage: '',
     showModal: false,
-    que: '',
+    q: '',
     isLoading: false,
     error: null,
   };
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.que !== this.state.que) {
+    if (prevState.q !== this.state.q) {
       this.fetchGallery();
     }
   }
 
   onChangeQuery = query => {
-    this.setState({ que: query, page: 1, gallery: [], error: null });
+    this.setState({ q: query, page: 1, gallery: [], error: null });
   };
   fetchGallery = () => {
-    const { que, page } = this.state;
-    const options = { que, page };
+    const { q, page } = this.state;
+    const options = { q, page };
 
     this.setState({ isLoading: true });
     pixabayApi
